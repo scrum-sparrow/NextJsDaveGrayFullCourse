@@ -4,6 +4,10 @@
 
 Let's begin ! 
 
-## Chapter 1
+## Chapter 1 : Start Here
+
+I learned more about what Next.js is and how to start a basic Next.js(13.1.6) dev environment.
+
+## Chapter 2 : Pages & Layouts
 
 I learned more about what Next.js is and how to start a basic Next.js(13.1.6) dev environment.
