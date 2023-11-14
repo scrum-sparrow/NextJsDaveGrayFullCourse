@@ -10,4 +10,9 @@ I learned more about what Next.js is and how to start a basic Next.js(13.1.6) de
 
 ## Chapter 2 : Pages & Layouts
 
-I learned more about what Next.js is and how to start a basic Next.js(13.1.6) dev environment.
+Learned how a page and router is build. I learned more about :
+- global css ;
+- specific css for a page ;
+- router ;
+- handle loading component ; 
+- handle error component by throwing a new Error.
