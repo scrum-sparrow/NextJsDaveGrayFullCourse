@@ -8,6 +8,8 @@ Let's begin !
 
 I learned more about what Next.js is and how to start a basic Next.js(13.1.6) dev environment.
 
+[Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next01)
+
 ## Chapter 2 : Pages & Layouts
 
 Learned how a page and router is build. I learned more about :
@@ -17,9 +19,21 @@ Learned how a page and router is build. I learned more about :
 - Handle loading component ; 
 - Handle error component by throwing a new Error.
 
+[Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next02)
+
 ## Chapter 3 : Fetching Data
 
 Learned about fetching data and handle metadata
 
 - Used jsonplaceholder to fetch random users data ;
 - Learned how to use metadata and how to implement dynamic metadata.
+
+[Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next03)
+
+## Chapter 4 : SSG, SSR & ISR
+
+Learned : 
+- the differences between Server Side Generation (SSG), Static Site Rendering (SSR) and Incremental Static Regeneration (ISR) 
+- How to apply incremental static regeneration and those work in both SSG and SSR pages.
+
+[Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next04)
