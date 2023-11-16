@@ -4,7 +4,7 @@
 
 Let's begin ! 
 
-## Chapter 1 : Start Here
+## Chapter 1 : Introduction & Setup
 
 I learned more about what Next.js is and how to start a basic Next.js(13.1.6) dev environment.
 
@@ -21,7 +21,7 @@ Learned how a page and router is build. I learned more about :
 
 [Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next02)
 
-## Chapter 3 : Fetching Data
+## Chapter 3 : Fetching Data, Dynamic Routes & Metadata
 
 Learned about fetching data and handle metadata
 
@@ -37,3 +37,11 @@ Learned :
 - How to apply incremental static regeneration and those work in both SSG and SSR pages.
 
 [Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next04)
+
+## Chapter 5 : Client Components & Small Project
+
+Learned :
+- More about client components and how to implement it
+- how to setup a project with tailwindcss
+
+[Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next05)
