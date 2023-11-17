@@ -56,3 +56,9 @@ Building a responsive blog project with Next.js@13.2.4 and Tailwindcss :
 -   Use markdown files to read out articles.
 
 [Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next06)
+
+## Chapter 7 : Route Handlers for API Routes
+
+Learned about the new route handlers in Next.js@13.2.4 that help to build API routes
+
+[Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next07)
