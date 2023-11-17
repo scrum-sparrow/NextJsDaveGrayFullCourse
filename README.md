@@ -65,6 +65,6 @@ Learned about the new route handlers in Next.js@13.2.4 that help to build API ro
 
 ## Chapter 8 : Build a REST API
 
-Learned how to create an API where we're simulating ralaying information from a third-party secret resource or pretending to get data from a database.
+Learned how to create an API where we're simulating relaying information from a third-party secret resource or pretending to get data from a database.
 
 [Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next07)
