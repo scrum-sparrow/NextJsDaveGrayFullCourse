@@ -85,4 +85,4 @@ Learned about how to apply revalidation to data without rebuilding the project
 
 ## Chapter 11 : Mutating Data
 
-Learned more about mutatiing Data and prefetch
+Learned more about mutating Data and prefetch
