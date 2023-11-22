@@ -67,4 +67,12 @@ Learned about the new route handlers in Next.js@13.2.4 that help to build API ro
 
 Learned how to create an API where we're simulating relaying information from a third-party secret resource or pretending to get data from a database.
 
-[Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next07)
+[Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next08)
+
+## Chapter 9 : Middleware
+
+Learned more about the middleware file : 
+- Handle a limiter for request :how to apply rate limiting middleware
+- Handle CORS : how to apply the different routes with either the config and the matcher, or the conditional logic, or both together
+
+[Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next09)
