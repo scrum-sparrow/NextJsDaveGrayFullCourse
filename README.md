@@ -84,3 +84,5 @@ Learned about how to apply revalidation to data without rebuilding the project
 [Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next10)
 
 ## Chapter 11 : Mutating Data
+
+Learned more about mutatiing Data and prefetch
