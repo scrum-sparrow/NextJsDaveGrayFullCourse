@@ -76,3 +76,5 @@ Learned more about the middleware file :
 - Handle CORS : how to apply the different routes with either the config and the matcher, or the conditional logic, or both together
 
 [Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next09)
+
+## Chapter 10 : Background & On-Demand Revalidation
