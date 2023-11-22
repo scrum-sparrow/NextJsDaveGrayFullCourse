@@ -78,3 +78,9 @@ Learned more about the middleware file :
 [Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next09)
 
 ## Chapter 10 : Background & On-Demand Revalidation
+
+Learned about how to apply revalidation to data without rebuilding the project
+
+[Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next10)
+
+## Chapter 11 : Mutating Data
