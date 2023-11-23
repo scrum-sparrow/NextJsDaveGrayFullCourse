@@ -89,7 +89,7 @@ Learned more about mutating Data and prefetch
 
 [Code Source](https://github.com/scrum-sparrow/NextJsDaveGrayFullCourse/tree/dev/next11)
 
-## Chapter 11 : Build a Blog with Remote MDX Content
+## Chapter 12 : Build a Blog with Remote MDX Content
 
 Learned :
 - How to fetch data buy using GitHub API and using next-mdx-remote to handle markdown files
