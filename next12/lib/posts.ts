@@ -1,58 +1,85 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
+import { compileMDX } from "next-mdx-remote/rsc";
 
-const postsDirectory = path.join(process.cwd(), "blogposts");
+type FileTree = {
+    tree: [
+        {
+            path: string;
+        }
+    ];
+};
 
-export function getSortedPostsData() {
-    // Get file names under /posts
-    const fileNames = fs.readdirSync(postsDirectory);
-    const allPostsData = fileNames.map((fileName) => {
-        // Remove ".md" from file name to get id
-        const id = fileName.replace(/\.md$/, "");
+export async function getPostByName(
+    fileName: string
+): Promise<BlogPost | undefined> {
+    const response = await fetch(
+        `https://raw.githubusercontent.com/scrum-sparrow/blogposts/main/${fileName}`,
+        {
+            headers: {
+                Accept: "application/vnd.github+json",
+                Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+                "X-GitHub-Api-Version": "2022-11-28",
+            },
+        }
+    );
 
-        // Read markdown file as string
-        const fullPath = path.join(postsDirectory, fileName);
-        const fileContents = fs.readFileSync(fullPath, "utf8");
+    if (!response.ok) return undefined;
 
-        // Use gray-matter to parse the post metadata section
-        const matterResult = matter(fileContents);
+    const rawMDX = await response.text();
 
-        const blogPost: BlogPost = {
-            id,
-            title: matterResult.data.title,
-            date: matterResult.data.date,
-        };
+    if (rawMDX === "404: Not Found") return undefined;
 
-        // Combine the data with the id
-        return blogPost;
+    const { frontmatter, content } = await compileMDX<{
+        title: string;
+        date: string;
+        tags: string[];
+    }>({
+        source: rawMDX,
     });
-    // Sort posts by date
-    return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
-}
 
-export async function getPostData(id: string) {
-    const fullPath = path.join(postsDirectory, `${id}.md`);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const id = fileName.replace(/\.mdx$/, "");
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
-
-    const processedContent = await remark()
-        .use(html)
-        .process(matterResult.content);
-
-    const contentHtml = processedContent.toString();
-
-    const blogPostWithHTML: BlogPost & { contentHtml: string } = {
-        id,
-        title: matterResult.data.title,
-        date: matterResult.data.date,
-        contentHtml,
+    const blogPostObj: BlogPost = {
+        meta: {
+            id,
+            title: frontmatter.title,
+            date: frontmatter.date,
+            tags: frontmatter.tags,
+        },
+        content,
     };
 
-    // Combine the data with the id
-    return blogPostWithHTML;
+    return blogPostObj
+}
+
+export async function getPostsMeta(): Promise<Meta[] | undefined> {
+    const response = await fetch(
+        "https://api.github.com/repos/scrum-sparrow/blogposts/git/trees/main?recursive=1",
+        {
+            headers: {
+                Accept: "application/vnd.github+json",
+                Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+                "X-GitHub-Api-Version": "2022-11-28",
+            },
+        }
+    );
+
+    if (!response.ok) return undefined;
+
+    const repoFileTree: FileTree = await response.json();
+
+    const filsArray = repoFileTree.tree
+        .map((obj) => obj.path)
+        .filter((path) => path.endsWith(".mdx"));
+
+    const posts: Meta[] = [];
+
+    for (const file of filsArray) {
+        const post = await getPostByName(file);
+        if (post) {
+            const { meta } = post;
+            posts.push(meta);
+        }
+    }
+
+    return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
